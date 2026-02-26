@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/VerticalSliceBoilerplate.Api/VerticalSliceBoilerplate.Api.csproj" />
+    <Project Path="src/VerticalSliceBoilerplate.Core/VerticalSliceBoilerplate.Core.csproj" />
+    <Project Path="src/VerticalSliceBoilerplate.Infrastructure.Data.Postgres/VerticalSliceBoilerplate.Infrastructure.Data.Postgres.csproj" />
+    <Project Path="src/VerticalSliceBoilerplate.Shared.Api/VerticalSliceBoilerplate.Shared.Api.csproj" />
+    <Project Path="src/VerticalSliceBoilerplate.Shared.Application/VerticalSliceBoilerplate.Shared.Application.csproj" />
+    <Project Path="src/VerticalSliceBoilerplate.Shared/VerticalSliceBoilerplate.Shared.csproj" />
+  </Folder>
+  <Folder Name="/misc/">
+    <Project Path="misc/data-seeding/CmdSeeding/CmdSeeding.csproj" />
+  </Folder>
+</Solution>

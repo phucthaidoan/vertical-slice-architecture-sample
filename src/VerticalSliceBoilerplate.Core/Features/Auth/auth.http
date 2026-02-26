@@ -1,0 +1,38 @@
+@host = https://localhost:7219
+@contentType = application/json
+
+###
+# Register a new user
+POST {{host}}/auth/register
+Content-Type: {{contentType}}
+
+{
+  "email": "user1@example.com",
+  "password": "P@ssw0rd123",
+  "userName": "demo-user1"
+}
+
+###
+# Login and get JWT
+POST {{host}}/auth/login
+Content-Type: {{contentType}}
+
+{
+  "email": "admin@example.com",
+  "password": "Admin123!"
+}
+
+###
+# Set the bearer token manually after logging in
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImU2ZjczNzUyLWY1YjktNGI0YS05ZGYxLTdjYzk2M2FmNWNhZiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6ImFkbWluQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3NzIxMDE1MjQsImlzcyI6IlZlcnRpY2FsU2xpY2VCb2lsZXJwbGF0ZSIsImF1ZCI6IlZlcnRpY2FsU2xpY2VCb2lsZXJwbGF0ZSJ9.QfC_C0XW-i2QVSUqMLv7MhiMal5eyQqGprJGf_UHAH4
+
+###
+# Get current user (requires Authorization header)
+GET {{host}}/auth/me
+Authorization: Bearer {{token}}
+
+###
+# Admin-only ping (requires user with Admin role)
+GET {{host}}/auth/admin-ping
+Authorization: Bearer {{token}}
+

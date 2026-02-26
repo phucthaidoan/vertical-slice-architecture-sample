@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VerticalSliceBoilerplate.Core\VerticalSliceBoilerplate.Core.csproj" />
+    <ProjectReference Include="..\VerticalSliceBoilerplate.Shared.Api\VerticalSliceBoilerplate.Shared.Api.csproj" />
+    <ProjectReference Include="..\VerticalSliceBoilerplate.Infrastructure.Data.Postgres\VerticalSliceBoilerplate.Infrastructure.Data.Postgres.csproj" />
+    <ProjectReference Include="..\VerticalSliceBoilerplate.Shared.Application\VerticalSliceBoilerplate.Shared.Application.csproj" />
+  </ItemGroup>
+
+</Project>
+

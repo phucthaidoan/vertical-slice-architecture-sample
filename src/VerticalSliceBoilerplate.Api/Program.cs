@@ -1,0 +1,87 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.OpenApi.Models;
+using VerticalSliceBoilerplate.Api.Auth;
+using VerticalSliceBoilerplate.Core.Constants;
+using VerticalSliceBoilerplate.Core.Features.Auth;
+using VerticalSliceBoilerplate.Core.Features.Auth.Services;
+using VerticalSliceBoilerplate.Core.Features.Sample;
+using VerticalSliceBoilerplate.Infrastructure.Data.Postgres;
+using VerticalSliceBoilerplate.Shared.Api.Endpoints;
+using VerticalSliceBoilerplate.Shared.Application.DomainEvents.Dispatching;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter your JWT token (e.g. Bearer &lt;token&gt;)"
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
+
+// Domain event dispatcher
+builder.Services.AddScoped<IDomainEventDispatcher, DomainEventDispatcher>();
+
+// Infrastructure
+builder.Services.AddPostgresInfrastructure(builder.Configuration);
+
+// Identity
+builder.Services.AddIdentityCore<IdentityUser>(options =>
+{
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredLength = 8;
+})
+.AddRoles<IdentityRole>()
+.AddEntityFrameworkStores<AppDbContext>();
+
+// JWT authentication
+builder.Services.AddJwtAuth(builder.Configuration, builder.Environment);
+
+// JWT token generation (used by Login handler)
+builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
+
+// Authorization
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("Admin", policy => policy.RequireRole(Roles.Admin));
+
+// Features
+builder.Services.AddSampleFeature();
+builder.Services.AddAuthFeature();
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapGet("/", () => "VerticalSliceBoilerplate is running.");
+
+app.MapEndpoints();
+
+app.Run();
