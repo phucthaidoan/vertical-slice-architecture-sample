@@ -2,7 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using VerticalSliceBoilerplate.Shared;
 
-namespace VerticalSliceBoilerplate.Shared.Application.DomainEvents.Dispatching;
+namespace VerticalSliceBoilerplate.Infrastructure.Data.DomainEvents;
 
 public class DomainEventDispatcher(IServiceProvider serviceProvider, ILogger<DomainEventDispatcher> logger) : IDomainEventDispatcher
 {

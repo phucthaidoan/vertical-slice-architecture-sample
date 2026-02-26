@@ -1,6 +1,6 @@
 using VerticalSliceBoilerplate.Shared;
 
-namespace VerticalSliceBoilerplate.Shared.Application.DomainEvents.Dispatching;
+namespace VerticalSliceBoilerplate.Infrastructure.Data.DomainEvents;
 
 public abstract class DomainEventHandler<TDomainEvent> : IDomainEventHandler<TDomainEvent>
     where TDomainEvent : IDomainEvent

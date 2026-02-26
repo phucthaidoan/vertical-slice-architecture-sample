@@ -2,9 +2,8 @@
   <Folder Name="/src/">
     <Project Path="src/VerticalSliceBoilerplate.Api/VerticalSliceBoilerplate.Api.csproj" />
     <Project Path="src/VerticalSliceBoilerplate.Core/VerticalSliceBoilerplate.Core.csproj" />
-    <Project Path="src/VerticalSliceBoilerplate.Infrastructure.Data.Postgres/VerticalSliceBoilerplate.Infrastructure.Data.Postgres.csproj" />
+    <Project Path="src/VerticalSliceBoilerplate.Infrastructure.Data/VerticalSliceBoilerplate.Infrastructure.Data.csproj" />
     <Project Path="src/VerticalSliceBoilerplate.Shared.Api/VerticalSliceBoilerplate.Shared.Api.csproj" />
-    <Project Path="src/VerticalSliceBoilerplate.Shared.Application/VerticalSliceBoilerplate.Shared.Application.csproj" />
     <Project Path="src/VerticalSliceBoilerplate.Shared/VerticalSliceBoilerplate.Shared.csproj" />
   </Folder>
   <Folder Name="/misc/">

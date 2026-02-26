@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using VerticalSliceBoilerplate.Infrastructure.Data.Postgres;
+using VerticalSliceBoilerplate.Infrastructure.Data.Context;
 
 var builder = Host.CreateApplicationBuilder(args);
 

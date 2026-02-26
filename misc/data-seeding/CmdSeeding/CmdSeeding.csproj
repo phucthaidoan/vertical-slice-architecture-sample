@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\VerticalSliceBoilerplate.Infrastructure.Data.Postgres\VerticalSliceBoilerplate.Infrastructure.Data.Postgres.csproj" />
+    <ProjectReference Include="..\..\..\src\VerticalSliceBoilerplate.Infrastructure.Data\VerticalSliceBoilerplate.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\..\..\src\VerticalSliceBoilerplate.Shared\VerticalSliceBoilerplate.Shared.csproj" />
   </ItemGroup>
 

@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using VerticalSliceBoilerplate.Infrastructure.Data.DomainEvents;
 using VerticalSliceBoilerplate.Shared;
-using VerticalSliceBoilerplate.Shared.Application.DomainEvents.Dispatching;
 
-namespace VerticalSliceBoilerplate.Infrastructure.Data.Postgres;
+namespace VerticalSliceBoilerplate.Infrastructure.Data.Interceptors;
 
 public class DomainEventInterceptor(IDomainEventDispatcher domainEventDispatcher) : SaveChangesInterceptor
 {

@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace VerticalSliceBoilerplate.Infrastructure.Data.Postgres;
+namespace VerticalSliceBoilerplate.Infrastructure.Data.Context;
 
 /// <summary>
 /// Application DbContext with ASP.NET Core Identity. Use EF Core migrations to create/update schema:
-/// dotnet ef migrations add InitialIdentity --project src/VerticalSliceBoilerplate.Infrastructure.Data.Postgres --startup-project src/VerticalSliceBoilerplate.Api
-/// dotnet ef database update --project src/VerticalSliceBoilerplate.Infrastructure.Data.Postgres --startup-project src/VerticalSliceBoilerplate.Api
+/// dotnet ef migrations add [Name] --project src/VerticalSliceBoilerplate.Infrastructure.Data --startup-project src/VerticalSliceBoilerplate.Api
+/// dotnet ef database update --project src/VerticalSliceBoilerplate.Infrastructure.Data --startup-project src/VerticalSliceBoilerplate.Api
 /// </summary>
 public class AppDbContext(DbContextOptions<AppDbContext> options)
     : IdentityDbContext<IdentityUser, IdentityRole, string>(options)

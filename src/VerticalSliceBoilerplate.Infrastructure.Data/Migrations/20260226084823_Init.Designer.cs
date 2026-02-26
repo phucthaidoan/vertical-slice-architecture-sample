@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using VerticalSliceBoilerplate.Infrastructure.Data.Postgres;
+using VerticalSliceBoilerplate.Infrastructure.Data.Context;
 
 #nullable disable
 
-namespace VerticalSliceBoilerplate.Infrastructure.Data.Postgres.Migrations
+namespace VerticalSliceBoilerplate.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20260226084823_Init")]

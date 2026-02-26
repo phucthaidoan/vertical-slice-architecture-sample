@@ -15,8 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\VerticalSliceBoilerplate.Core\VerticalSliceBoilerplate.Core.csproj" />
     <ProjectReference Include="..\VerticalSliceBoilerplate.Shared.Api\VerticalSliceBoilerplate.Shared.Api.csproj" />
-    <ProjectReference Include="..\VerticalSliceBoilerplate.Infrastructure.Data.Postgres\VerticalSliceBoilerplate.Infrastructure.Data.Postgres.csproj" />
-    <ProjectReference Include="..\VerticalSliceBoilerplate.Shared.Application\VerticalSliceBoilerplate.Shared.Application.csproj" />
+    <ProjectReference Include="..\VerticalSliceBoilerplate.Infrastructure.Data\VerticalSliceBoilerplate.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>

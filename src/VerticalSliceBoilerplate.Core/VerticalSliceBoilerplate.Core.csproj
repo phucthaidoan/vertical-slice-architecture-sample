@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\VerticalSliceBoilerplate.Shared\VerticalSliceBoilerplate.Shared.csproj" />
     <ProjectReference Include="..\VerticalSliceBoilerplate.Shared.Api\VerticalSliceBoilerplate.Shared.Api.csproj" />
-    <ProjectReference Include="..\VerticalSliceBoilerplate.Shared.Application\VerticalSliceBoilerplate.Shared.Application.csproj" />
   </ItemGroup>
 
 </Project>

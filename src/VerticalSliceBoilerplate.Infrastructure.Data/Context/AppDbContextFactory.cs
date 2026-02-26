@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace VerticalSliceBoilerplate.Infrastructure.Data.Postgres;
+namespace VerticalSliceBoilerplate.Infrastructure.Data.Context;
 
 public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 {

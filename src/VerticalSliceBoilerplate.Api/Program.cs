@@ -5,9 +5,9 @@ using VerticalSliceBoilerplate.Core.Constants;
 using VerticalSliceBoilerplate.Core.Features.Auth;
 using VerticalSliceBoilerplate.Core.Features.Auth.Services;
 using VerticalSliceBoilerplate.Core.Features.Sample;
-using VerticalSliceBoilerplate.Infrastructure.Data.Postgres;
+using VerticalSliceBoilerplate.Infrastructure.Data;
+using VerticalSliceBoilerplate.Infrastructure.Data.Context;
 using VerticalSliceBoilerplate.Shared.Api.Endpoints;
-using VerticalSliceBoilerplate.Shared.Application.DomainEvents.Dispatching;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,11 +36,8 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-// Domain event dispatcher
-builder.Services.AddScoped<IDomainEventDispatcher, DomainEventDispatcher>();
-
-// Infrastructure
-builder.Services.AddPostgresInfrastructure(builder.Configuration);
+// Infrastructure (includes domain event dispatcher and interceptors)
+builder.Services.AddDataInfrastructure(builder.Configuration);
 
 // Identity
 builder.Services.AddIdentityCore<IdentityUser>(options =>
