@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
+using VerticalSliceBoilerplate.Core.Features.Auth.Login;
 using VerticalSliceBoilerplate.Core.Features.Auth.Services;
 
 namespace VerticalSliceBoilerplate.Api.Auth;

@@ -4,22 +4,22 @@ using Microsoft.AspNetCore.Routing;
 using VerticalSliceBoilerplate.Shared.Api;
 using VerticalSliceBoilerplate.Shared.Api.Endpoints;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
+namespace VerticalSliceBoilerplate.Core.Features.Auth.Login;
 
-public sealed class RegisterEndpoint : IEndpoint
+public sealed class LoginEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("/auth/register", async (RegisterRequest request, IRegisterHandler handler, CancellationToken ct) =>
+        app.MapPost("/auth/login", async (LoginRequest request, ILoginHandler handler, CancellationToken ct) =>
             {
                 var result = await handler.HandleAsync(request, ct);
                 return ApiResults.ToApiResponse(result);
             })
-            .AddEndpointFilter<ValidationFilter<RegisterRequest>>()
+            .AddEndpointFilter<ValidationFilter<LoginRequest>>()
             .WithTags(AuthTags.Auth)
-            .WithSummary("Register a new user")
-            .WithDescription("Creates a new user with email and password. User is assigned the Member role.")
-            .Produces<ApiResponse<RegisterResponse>>(StatusCodes.Status200OK)
+            .WithSummary("Login with email and password")
+            .WithDescription("Returns a JWT bearer token for use in the Authorization header.")
+            .Produces<ApiResponse<LoginResponse>>(StatusCodes.Status200OK)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .AllowAnonymous();
     }

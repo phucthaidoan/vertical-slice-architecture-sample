@@ -3,12 +3,7 @@ using VerticalSliceBoilerplate.Core.Features.Auth.Errors;
 using VerticalSliceBoilerplate.Core.Features.Auth.Services;
 using VerticalSliceBoilerplate.Shared;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
-
-public interface ILoginHandler
-{
-    Task<Result<LoginResponse>> HandleAsync(LoginRequest request, CancellationToken cancellationToken = default);
-}
+namespace VerticalSliceBoilerplate.Core.Features.Auth.Login;
 
 public sealed class LoginHandler : ILoginHandler
 {

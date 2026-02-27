@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Routing;
 using VerticalSliceBoilerplate.Core.Constants;
 using VerticalSliceBoilerplate.Shared.Api.Endpoints;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
+namespace VerticalSliceBoilerplate.Core.Features.Auth.AdminPing;
 
 public sealed class AdminPingEndpoint : IEndpoint
 {

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
 using VerticalSliceBoilerplate.Shared.Api.Endpoints;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
+namespace VerticalSliceBoilerplate.Core.Features.Auth.Me;
 
 public sealed class MeEndpoint : IEndpoint
 {
@@ -35,12 +35,4 @@ public sealed class MeEndpoint : IEndpoint
             .WithDescription("Returns the authenticated user's id, email, username, and roles. Requires a valid JWT.")
             .RequireAuthorization();
     }
-}
-
-public sealed class MeResponse
-{
-    public string UserId { get; init; } = string.Empty;
-    public string Email { get; init; } = string.Empty;
-    public string UserName { get; init; } = string.Empty;
-    public List<string> Roles { get; init; } = [];
 }

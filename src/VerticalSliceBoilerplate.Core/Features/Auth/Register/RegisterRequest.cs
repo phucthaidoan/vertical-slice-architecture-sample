@@ -1,4 +1,4 @@
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
+namespace VerticalSliceBoilerplate.Core.Features.Auth.Register;
 
 public sealed class RegisterRequest
 {

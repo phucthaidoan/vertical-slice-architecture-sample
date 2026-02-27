@@ -1,4 +1,4 @@
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
+namespace VerticalSliceBoilerplate.Core.Features.Auth.Login;
 
 public sealed class LoginRequest
 {

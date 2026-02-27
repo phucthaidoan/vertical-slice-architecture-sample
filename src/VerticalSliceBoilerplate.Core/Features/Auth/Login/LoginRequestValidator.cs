@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
+namespace VerticalSliceBoilerplate.Core.Features.Auth.Login;
 
 public sealed class LoginRequestValidator : AbstractValidator<LoginRequest>
 {

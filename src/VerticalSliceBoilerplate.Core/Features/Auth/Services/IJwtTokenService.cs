@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Identity;
-using VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
+using VerticalSliceBoilerplate.Core.Features.Auth.Login;
 
 namespace VerticalSliceBoilerplate.Core.Features.Auth.Services;
 

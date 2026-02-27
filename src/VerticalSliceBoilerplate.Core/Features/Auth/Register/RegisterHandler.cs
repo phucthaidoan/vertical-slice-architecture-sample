@@ -3,12 +3,7 @@ using VerticalSliceBoilerplate.Core.Constants;
 using VerticalSliceBoilerplate.Core.Features.Auth.Errors;
 using VerticalSliceBoilerplate.Shared;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Endpoints;
-
-public interface IRegisterHandler
-{
-    Task<Result<RegisterResponse>> HandleAsync(RegisterRequest request, CancellationToken cancellationToken = default);
-}
+namespace VerticalSliceBoilerplate.Core.Features.Auth.Register;
 
 public sealed class RegisterHandler : IRegisterHandler
 {
