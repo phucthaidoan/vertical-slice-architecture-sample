@@ -1,11 +1,10 @@
 using System.Security.Claims;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Routing;
+using VerticalSliceBoilerplate.Core.Features.Auth.Me;
 using VerticalSliceBoilerplate.Shared.Api.Endpoints;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Me;
+namespace VerticalSliceBoilerplate.Api.Features.Auth.Me;
 
 public sealed class MeEndpoint : IEndpoint
 {

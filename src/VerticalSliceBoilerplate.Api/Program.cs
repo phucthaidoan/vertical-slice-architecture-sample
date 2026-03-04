@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
 using VerticalSliceBoilerplate.Api.Auth;
-using VerticalSliceBoilerplate.Core.Constants;
+using VerticalSliceBoilerplate.Api.Features.Auth;
+using VerticalSliceBoilerplate.Api.Features.Sample;
 using VerticalSliceBoilerplate.Core.Features.Auth;
 using VerticalSliceBoilerplate.Core.Features.Auth.Services;
 using VerticalSliceBoilerplate.Core.Features.Sample;
@@ -61,9 +62,14 @@ builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 builder.Services.AddAuthorizationBuilder()
     .AddPolicy("Admin", policy => policy.RequireRole(Roles.Admin));
 
-// Features
-builder.Services.AddSampleFeature();
-builder.Services.AddAuthFeature();
+// Core features (handlers and validators)
+builder.Services.AddSampleFeatureCore();
+builder.Services.AddAuthFeatureCore();
+
+// TODO declare to add as feature including endpoints and core. Is it good?
+// API endpoints
+builder.Services.AddSampleEndpoints();
+builder.Services.AddAuthEndpoints();
 
 var app = builder.Build();
 

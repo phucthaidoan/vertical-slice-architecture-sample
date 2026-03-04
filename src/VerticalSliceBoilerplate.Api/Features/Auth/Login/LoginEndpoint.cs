@@ -1,10 +1,9 @@
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
+using VerticalSliceBoilerplate.Core.Features.Auth.Login;
 using VerticalSliceBoilerplate.Shared.Api;
 using VerticalSliceBoilerplate.Shared.Api.Endpoints;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Login;
+namespace VerticalSliceBoilerplate.Api.Features.Auth.Login;
 
 public sealed class LoginEndpoint : IEndpoint
 {

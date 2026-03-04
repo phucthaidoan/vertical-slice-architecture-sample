@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
-using VerticalSliceBoilerplate.Core.Constants;
+using VerticalSliceBoilerplate.Api.Auth;
 using VerticalSliceBoilerplate.Shared.Api.Endpoints;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.AdminPing;
+namespace VerticalSliceBoilerplate.Api.Features.Auth.AdminPing;
 
 public sealed class AdminPingEndpoint : IEndpoint
 {

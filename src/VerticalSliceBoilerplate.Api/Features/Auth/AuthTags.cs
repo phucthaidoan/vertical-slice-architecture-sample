@@ -1,4 +1,4 @@
-namespace VerticalSliceBoilerplate.Core.Features.Auth;
+namespace VerticalSliceBoilerplate.Api.Features.Auth;
 
 internal static class AuthTags
 {

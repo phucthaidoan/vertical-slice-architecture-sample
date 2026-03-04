@@ -1,10 +1,9 @@
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
+using VerticalSliceBoilerplate.Core.Features.Sample.Ping;
 using VerticalSliceBoilerplate.Shared.Api;
 using VerticalSliceBoilerplate.Shared.Api.Endpoints;
 
-namespace VerticalSliceBoilerplate.Core.Features.Sample.Ping;
+namespace VerticalSliceBoilerplate.Api.Features.Sample.Ping;
 
 public sealed class PingEndpoint : IEndpoint
 {
@@ -16,10 +15,9 @@ public sealed class PingEndpoint : IEndpoint
                 var result = await handler.HandleAsync(request, ct);
                 return ApiResults.ToApiResponse(result);
             })
-            .WithTags(Sample.SampleTags.Sample)
+            .WithTags(SampleTags.Sample)
             .WithSummary("Sample ping endpoint")
             .WithDescription("Simple sample endpoint that echoes a message and returns the current UTC timestamp.")
             .Produces<ApiResponse<PingResponse>>(StatusCodes.Status200OK);
     }
 }
-

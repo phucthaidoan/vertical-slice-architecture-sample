@@ -1,10 +1,9 @@
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
+using VerticalSliceBoilerplate.Core.Features.Auth.Register;
 using VerticalSliceBoilerplate.Shared.Api;
 using VerticalSliceBoilerplate.Shared.Api.Endpoints;
 
-namespace VerticalSliceBoilerplate.Core.Features.Auth.Register;
+namespace VerticalSliceBoilerplate.Api.Features.Auth.Register;
 
 public sealed class RegisterEndpoint : IEndpoint
 {
